@@ -1,0 +1,11 @@
+{
+  "name": "basstracks",
+  "version": "1.0.0",
+  "description": "list of popular tracks to play on bass guitar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Philipp Walter",
+  "license": "ISC"
+}

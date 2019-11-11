@@ -1,0 +1,149 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "stepType": "CreateEnum",
+      "enum": "Role",
+      "values": [
+        "USER",
+        "ADMIN"
+      ]
+    },
+    {
+      "stepType": "CreateEnum",
+      "enum": "Difficulty",
+      "values": [
+        "BEGINNER",
+        "NOVICE",
+        "INTERMEDIATE",
+        "ADVANCED",
+        "EXPERT"
+      ]
+    },
+    {
+      "stepType": "CreateModel",
+      "model": "Artist"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Artist",
+      "field": "id",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Artist",
+      "field": "id",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Artist",
+      "field": "id",
+      "directive": "default",
+      "argument": "",
+      "value": "cuid()"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Artist",
+      "field": "id",
+      "directive": "id"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Artist",
+      "field": "name",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Artist",
+      "field": "tracks",
+      "type": "Track",
+      "arity": "list"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "field": "createdAt",
+      "type": "DateTime",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "User",
+      "field": "createdAt",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "User",
+      "field": "createdAt",
+      "directive": "default",
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "field": "role",
+      "type": "Role",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "User",
+      "field": "role",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "User",
+      "field": "role",
+      "directive": "default",
+      "argument": "",
+      "value": "USER"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Track",
+      "field": "artist",
+      "type": "Artist",
+      "arity": "optional"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Track",
+      "field": "genre",
+      "type": "String",
+      "arity": "optional"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Track",
+      "field": "difficulty",
+      "type": "Difficulty",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Track",
+      "field": "notes",
+      "type": "String",
+      "arity": "optional"
+    },
+    {
+      "stepType": "DeleteField",
+      "model": "Track",
+      "field": "content"
+    },
+    {
+      "stepType": "DeleteField",
+      "model": "Track",
+      "field": "author"
+    }
+  ]
+}
